@@ -35,7 +35,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://maxux/zflist:development-v2-publish'
+  image: 'docker://maxux/zflist:development-v2'
   entrypoint: /usr/local/bin/zflist-publish
   env:
     ZFLIST_MNT: /tmp/newflist
