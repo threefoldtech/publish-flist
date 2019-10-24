@@ -1,0 +1,19 @@
+name: Publish to Zero-OS Hub
+description: Build and publish flist from your workflow
+author: ThreeFold Tech
+inputs:
+  name:
+    description: The name of your flist file
+  root:
+    description: The root directory to be published
+    default: /github/workspace
+  token:
+    description: hub.grid.tf token
+runs:
+  using: 'docker'
+  image: 'docker://maxux/zflist:development-v2-publish'
+  entrypoint: /usr/local/bin/zflist-publish
+  env:
+    ZFLIST_MNT: /tmp/newflist
+    ZFLIST_BACKEND: '{"host": "playground.hub.grid.tf", "port": 9910}'
+  
