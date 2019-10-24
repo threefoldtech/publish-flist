@@ -12,7 +12,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://maxux/zflist:development-v2-publish'
-  entrypoint: /usr/local/bin/zflist-publish
+  entrypoint: zflist-publish
   env:
     ZFLIST_MNT: /tmp/newflist
     ZFLIST_BACKEND: '{"host": "playground.hub.grid.tf", "port": 9910}'
