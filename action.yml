@@ -2,17 +2,36 @@ name: Publish to Zero-OS Hub
 description: Build and publish flist from your workflow
 author: ThreeFold Tech
 inputs:
+  action:
+    required: true
+    description: |
+        Action do you want to do, this is required and needs
+        to be one of theses values:
+         - publish: create and upload an flist
+         - promote: promote an flist on the hub to another repository
+         - symlink: create a symlink on the hub
+
+        All actions needs a 'name' and 'token' argument. For symlink
+        and promote, the name is the source name, the input 'target' is
+        the destination repository/filename or the linkname.
+
   name:
     description: The name of your flist file
+    required: true
   root:
     description: The root directory to be published
     default: /github/workspace
   token:
     description: hub.grid.tf token
+    required: true
+  target:
+    description: For action 'symlink' and 'promote', this is the link name
+    or the destination repository/filename.
+
 runs:
   using: 'docker'
   image: 'docker://maxux/zflist:development-v2-publish'
-  entrypoint: zflist-publish
+  entrypoint: /usr/local/bin/zflist-publish
   env:
     ZFLIST_MNT: /tmp/newflist
     ZFLIST_BACKEND: '{"host": "playground.hub.grid.tf", "port": 9910}'
