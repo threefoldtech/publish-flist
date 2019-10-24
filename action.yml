@@ -24,6 +24,10 @@ inputs:
   token:
     description: hub.grid.tf token
     required: true
+  user:
+    description: |
+        The username to switch when using a jwt allowing that.
+        This is required when promoting.
   target:
     description: |
         For action 'symlink' and 'promote', this is the link name
