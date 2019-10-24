@@ -25,8 +25,9 @@ inputs:
     description: hub.grid.tf token
     required: true
   target:
-    description: For action 'symlink' and 'promote', this is the link name
-    or the destination repository/filename.
+    description: |
+        For action 'symlink' and 'promote', this is the link name
+        or the destination repository/filename.
 
 runs:
   using: 'docker'
