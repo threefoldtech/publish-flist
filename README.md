@@ -3,7 +3,7 @@
 You can use this GitHub action to automatically pack
 and publish your stuff into the Zero-OS hub.
 
-You can (for now) use 3 differents action within this action:
+You can (for now) use 5 differents action within this action:
 
 ## Publish
 
