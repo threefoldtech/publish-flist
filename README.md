@@ -64,3 +64,42 @@ The token needs to be a valid Hub JWT token issued from ItsYou.Online
     target: final:symlinked-master.flist
     token: ${{ secrets.HUB_TOKEN }}
 ```
+
+## Delete
+
+This step can be used to delete one of your flist.
+You can use the `user` input to switch to another user before deleting.
+
+The token needs to be a valid Hub JWT token issued from ItsYou.Online
+
+```yaml
+- name: Delete flist
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: delete
+    user: tf-official-apps
+    name: demo-action-promoted.flist
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
+## Readlink
+
+This step can be used to read the symlink target of an flist, any flist can be resolved.
+The resulting name (if the flisti is a symlink) will be set on the output `linkpoint` which
+you can reuse later.
+
+```yaml
+- name: Readlink of the current build flist
+  uses: threefoldtech/publish-flist@master
+  id: readlink
+  with:
+    action: readlink
+    user: tf-official-apps
+    name: demo-action-symlinked.flist
+    token: ${{ secrets.HUB_TOKEN }}
+
+- name: Do something with the readlink
+  run: |
+    echo "Symlink: ${{ steps.readlink.outputs.linkpoint }}
+```
+
