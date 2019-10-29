@@ -10,10 +10,15 @@ inputs:
          - publish: create and upload an flist
          - promote: promote an flist on the hub to another repository
          - symlink: create a symlink on the hub
+         - delete: delete one of your flist
+         - readlink: read target name of a symlink
 
         All actions needs a 'name' and 'token' argument. For symlink
         and promote, the name is the source name, the input 'target' is
         the destination repository/filename or the linkname.
+
+        When using readlink, result will be put on 'linkpoint' output
+        variable.
 
   name:
     description: The name of your flist file
@@ -32,6 +37,10 @@ inputs:
     description: |
         For action 'symlink' and 'promote', this is the link name
         or the destination repository/filename.
+
+outputs:
+  linkpoint:
+    description: readlink target name
 
 runs:
   using: 'docker'
