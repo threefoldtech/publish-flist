@@ -48,5 +48,4 @@ runs:
   entrypoint: /usr/local/bin/zflist-publish
   env:
     ZFLIST_MNT: /tmp/newflist
-    ZFLIST_BACKEND: '{"host": "playground.hub.grid.tf", "port": 9910}'
   
