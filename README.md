@@ -3,7 +3,7 @@
 You can use this GitHub action to automatically pack
 and publish your stuff into the Zero-OS hub.
 
-You can (for now) use 5 differents action within this action:
+You can (for now) use 6 differents action within this action:
 
 ## Publish
 
@@ -62,6 +62,27 @@ The token needs to be a valid Hub JWT token issued from ItsYou.Online
     user: tf-official-apps
     name: demo-action-promoted.flist
     target: final:symlinked-master.flist
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
+## Cross-Link
+
+This step can be used to symlink across repository (create a symlink in your user, pointing
+to a file of another user).
+You can use the `user` input to switch to another user before symlinking.
+
+The input `target` will be the link name.
+
+The token needs to be a valid Hub JWT token issued from ItsYou.Online
+
+```yaml
+- name: Crisslink flist
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: crosslink
+    user: tf-official-apps
+    name: my-crosslink-file.flist
+    target: maxux/nginx-latest.flist
     token: ${{ secrets.HUB_TOKEN }}
 ```
 
