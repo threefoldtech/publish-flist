@@ -9,6 +9,7 @@ inputs:
         to be one of theses values:
          - publish: create and upload an flist
          - promote: promote an flist on the hub to another repository
+         - rename: rename one of your flist to a new name
          - symlink: create a symlink on the hub
          - crosslink: create a cross-repository symlink on the hub
          - delete: delete one of your flist
@@ -38,6 +39,8 @@ inputs:
     description: |
         For action 'symlink' and 'promote', this is the link name
         or the destination repository/filename.
+
+        For action 'rename', this is the new name of your flist
 
         For 'crosslink' action, this should be
         'repository/filename' format

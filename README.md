@@ -3,7 +3,7 @@
 You can use this GitHub action to automatically pack
 and publish your stuff into the Zero-OS hub.
 
-You can (for now) use 6 differents action within this action:
+You can (for now) use 7 differents action within this action:
 
 ## Publish
 
@@ -44,6 +44,27 @@ The token needs to be a valid Hub JWT token issued from ItsYou.Online
     target: demo-action-promoted.flist
     token: ${{ secrets.HUB_TOKEN }}
 ```
+
+## Rename
+
+This step can be used to rename an flist to another name, within your repository.
+You can use the `user` input to switch to another user before symlinking.
+
+The input `target` will be the new name.
+
+The token needs to be a valid Hub JWT token issued from ItsYou.Online
+
+```yaml
+- name: Rename flist
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: rename
+    user: tf-official-apps
+    name: my-original.flist
+    target: my-new-name.flist
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
 
 ## Symlink
 
