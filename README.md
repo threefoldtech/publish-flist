@@ -92,7 +92,7 @@ This step can be used to symlink across repository (create a symlink in your use
 to a file of another user).
 You can use the `user` input to switch to another user before symlinking.
 
-The input `target` will be the link name.
+The input `target` will be the destination (link to).
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
 
