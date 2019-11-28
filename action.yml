@@ -10,6 +10,7 @@ inputs:
          - publish: create and upload an flist
          - promote: promote an flist on the hub to another repository
          - symlink: create a symlink on the hub
+         - crosslink: create a cross-repository symlink on the hub
          - delete: delete one of your flist
          - readlink: read target name of a symlink
 
@@ -37,6 +38,9 @@ inputs:
     description: |
         For action 'symlink' and 'promote', this is the link name
         or the destination repository/filename.
+
+        For 'crosslink' action, this should be
+        'repository/filename' format
 
 outputs:
   linkpoint:
