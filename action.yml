@@ -14,6 +14,7 @@ inputs:
          - crosslink: create a cross-repository symlink on the hub
          - delete: delete one of your flist
          - readlink: read target name of a symlink
+         - merge: merge targets into name
 
         All actions needs a 'name' and 'token' argument. For symlink
         and promote, the name is the source name, the input 'target' is
@@ -21,6 +22,15 @@ inputs:
 
         When using readlink, result will be put on 'linkpoint' output
         variable.
+
+        When using merge action, name is the result filename and target
+        should be all flists to merge togethers, separated by space, eg:
+
+            name: hello.flist
+            target: tf-bootable/ubuntu:18.04.flist maxux/my-service.flist
+
+        this will merge 'maxux/my-service.flist' inside 'tf-bootable/ubuntu:18.04.flist'
+        and save it as 'yourname/hello.flist'
 
   name:
     description: The name of your flist file
@@ -44,6 +54,9 @@ inputs:
 
         For 'crosslink' action, this should be
         'repository/filename' format
+
+        For 'merge' action, this is a list of flist separated by space,
+        formatted by full name (repository/flist, eg: 'maxux/my-file.flist')
 
 outputs:
   linkpoint:

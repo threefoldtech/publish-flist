@@ -145,3 +145,20 @@ you can reuse later.
     echo "Symlink: ${{ steps.readlink.outputs.linkpoint }}
 ```
 
+## Merge
+
+This step can be used to merge multiple flist present on the hub, to a single one.
+The resulting name (the final flist) is specified by `name` field. The list of
+flists you want to merge are specified in `target` and are separated by space.
+
+```yaml
+- name: Merge service with ubuntu
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: merge
+    user: tf-official-apps
+    name: my-merged-service.flist
+    target: tf-bootable/ubuntu:18.04.flist maxux/my-service.flist
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
