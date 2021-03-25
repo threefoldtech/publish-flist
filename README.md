@@ -13,7 +13,8 @@ resulting flist into the hub (playground).
 You can add an optionnal `root` parameter to choose the root directory.
 By default `/github/workspace` is used.
 
-The token needs to be a valid Hub JWT token issued from ItsYou.Online
+The token needs to be a valid Hub JWT token issued from ItsYou.Online.
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Publishing flist
@@ -33,6 +34,7 @@ The `target` input will be the name of the promoted flist, the `name`
 contains the original file and repository `repository/source.flist`
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Promoting flist
@@ -53,6 +55,7 @@ You can use the `user` input to switch to another user before symlinking.
 The input `target` will be the new name.
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Rename flist
@@ -74,6 +77,7 @@ You can use the `user` input to switch to another user before symlinking.
 The input `target` will be the link name.
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Symlink flist
@@ -95,6 +99,7 @@ You can use the `user` input to switch to another user before symlinking.
 The input `target` will be the destination (link to).
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Crisslink flist
@@ -113,6 +118,7 @@ This step can be used to delete one of your flist.
 You can use the `user` input to switch to another user before deleting.
 
 The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
 - name: Delete flist

@@ -39,8 +39,9 @@ inputs:
     description: The root directory to be published
     default: /github/workspace
   token:
-    description: hub.grid.tf token
-    required: true
+    description: hub.grid.tf itsyou online token
+  threefold:
+    description: hub.grid.tf threefold connect token
   user:
     description: |
         The username to switch when using a jwt allowing that.
