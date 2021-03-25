@@ -8,6 +8,7 @@ inputs:
         Action do you want to do, this is required and needs
         to be one of theses values:
          - publish: create and upload an flist
+         - upload: upload a .tar.gz archive directly
          - promote: promote an flist on the hub to another repository
          - rename: rename one of your flist to a new name
          - symlink: create a symlink on the hub
