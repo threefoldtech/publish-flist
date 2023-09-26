@@ -102,7 +102,7 @@ The token needs to be a valid Hub JWT token issued from ItsYou.Online
 If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
 
 ```yaml
-- name: Crisslink flist
+- name: Crosslink flist
   uses: threefoldtech/publish-flist@master
   with:
     action: crosslink
@@ -167,4 +167,50 @@ flists you want to merge are specified in `target` and are separated by space.
     target: tf-bootable/ubuntu:18.04.flist maxux/my-service.flist
     token: ${{ secrets.HUB_TOKEN }}
 ```
+
+## Tagging
+
+This step can be used to tag a remote fist into your own tagging repository.
+You can use the `user` input to switch to another user before tagging.
+
+The input `name` will be the tag name and link name (eg: v1.0.0/somelink)
+The input `target` will be the destination (link to).
+
+The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
+
+```yaml
+- name: Tagging flist
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: tag
+    user: tf-official-apps
+    name: v1.0.0/nginx
+    target: maxux/nginx-latest.flist
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
+## Cross-Tagging
+
+This step can be used to symlink a tag into your repository.
+You can use the `user` input to switch to another user before symlinking.
+
+Warning: `name` must not ends with '.flist' !
+
+The input `target` will be the destination (link to).
+
+The token needs to be a valid Hub JWT token issued from ItsYou.Online
+If you want to use `ThreeFold Connect` token, please use `threefold` and not `token` field.
+
+```yaml
+- name: Crosstag a tag
+  uses: threefoldtech/publish-flist@master
+  with:
+    action: crosstag
+    user: tf-official-apps
+    name: my-crosstag-name
+    target: maxux/v2.0.0
+    token: ${{ secrets.HUB_TOKEN }}
+```
+
 

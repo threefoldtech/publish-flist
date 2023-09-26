@@ -16,10 +16,18 @@ inputs:
          - delete: delete one of your flist
          - readlink: read target name of a symlink
          - merge: merge targets into name
+         - tag: tag an flist (untag supported as well)
+         - crosstag: create a link to a tag
 
         All actions needs a 'name' and 'token' argument. For symlink
         and promote, the name is the source name, the input 'target' is
         the destination repository/filename or the linkname.
+
+        When tagging, 'target' is the destination of the link (eg: user/target.flist)
+        and 'name' is your tag and link name (eg: v1.0.0/link.flist)
+
+        When crosstagging, 'name' is link name in your repository and 'target' is
+        the destination link (eg: user/destination.flist)
 
         When using readlink, result will be put on 'linkpoint' output
         variable.
@@ -54,9 +62,10 @@ inputs:
 
         For action 'rename', this is the new name of your flist
 
-        For 'crosslink' action, this should be
-        'repository/filename' format
+        For 'crosslink', this should be 'repository/filename' format
 
+        For tagging, this is the destination link (format repository/filename)
+        
         For 'merge' action, this is a list of flist separated by space,
         formatted by full name (repository/flist, eg: 'maxux/my-file.flist')
 
