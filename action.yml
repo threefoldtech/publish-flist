@@ -54,6 +54,8 @@ inputs:
   baseurl:
     description: The hub repository base url
     default: 'https://hub.grid.tf'
+  backend:
+    description: The hub public backend host:port where to upload chunks
   user:
     description: |
         The username to switch when using a jwt allowing that.
