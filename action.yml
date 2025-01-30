@@ -51,11 +51,9 @@ inputs:
     description: hub.grid.tf itsyou online token
   threefold:
     description: hub.grid.tf threefold connect token
-
   baseurl:
     description: The hub repository base url
-    default: https://hub.grid.tf
-
+    default: 'https://hub.grid.tf'
   user:
     description: |
         The username to switch when using a jwt allowing that.
