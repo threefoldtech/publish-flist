@@ -47,6 +47,9 @@ inputs:
   root:
     description: The root directory to be published
     default: /github/workspace
+  baseurl:
+    description: The hub repository base url
+    default: https://hub.grid.tf
   token:
     description: hub.grid.tf itsyou online token
   threefold:
