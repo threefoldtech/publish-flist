@@ -53,7 +53,7 @@ inputs:
     description: hub.grid.tf threefold connect token
   baseurl:
     description: The hub repository base url
-    default: 'https://hub.grid.tf'
+    default: 'https://hub.threefold.me'
   backend:
     description: The hub public backend host:port where to upload chunks
   user:
