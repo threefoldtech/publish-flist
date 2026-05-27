@@ -214,3 +214,8 @@ If you want to use `ThreeFold Connect` token, please use `threefold` and not `to
 ```
 
 
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+Copyright (c) TFTech NV.
