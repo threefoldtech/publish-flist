@@ -1,4 +1,4 @@
-# Publish Flist
+# ZOS Flist Publish
 
 A GitHub Action for publishing, promoting, and managing flists — lightweight container formats used for deploying workloads without heavy image downloads.
 
